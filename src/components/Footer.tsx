@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Phone } from 'lucide-react';
+import { MessageCircle, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -32,10 +32,19 @@ const Footer = () => {
             <ul className="space-y-4">
               <li>
                 <a 
+                  href="mailto:support@sweepshub.us"
+                  className="flex items-center gap-2 text-white/60 hover:text-red-500 transition-colors duration-200"
+                >
+                  <Mail size={18} />
+                  <span>support@sweepshub.us</span>
+                </a>
+              </li>
+              <li>
+                <a 
                   href="https://signal.me/#eu/PRhrtX5sczCuuGG60-9w-XI1bCjbYIrbhPvdNe7O9HklBQ-Al-pNo5msjVGXu3N_"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/60 hover:text-gold-500 transition-colors duration-200"
+                  className="flex items-center gap-2 text-white/60 hover:text-red-500 transition-colors duration-200"
                 >
                   <MessageCircle size={18} />
                   <span>Contact us on Signal</span>
@@ -46,7 +55,7 @@ const Footer = () => {
                   href="https://wa.me/message/OUZCFCOPNWUGB1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/60 hover:text-gold-500 transition-colors duration-200"
+                  className="flex items-center gap-2 text-white/60 hover:text-red-500 transition-colors duration-200"
                 >
                   <Phone size={18} />
                   <span>Message us on WhatsApp</span>
@@ -57,7 +66,7 @@ const Footer = () => {
                   href="https://t.me/shawnofficial09"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/60 hover:text-gold-500 transition-colors duration-200"
+                  className="flex items-center gap-2 text-white/60 hover:text-red-500 transition-colors duration-200"
                 >
                   <MessageCircle size={18} />
                   <span>Chat with us on Telegram</span>
