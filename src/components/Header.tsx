@@ -42,16 +42,26 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto px-4 py-4 md:py-5">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <motion.button
             onClick={() => handleSectionChange('games')}
-            className="flex items-center space-x-3 text-white font-heading font-bold text-xl md:text-2xl"
+            className="flex items-center space-x-4 text-white font-heading font-bold text-2xl md:text-3xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src="/sweepshublogo.jpg" alt="Sweeps Hub" className="h-10 w-10 rounded-full" />
-            <span>Sweeps Hub</span>
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-gold-500 rounded-full blur-sm opacity-75"></div>
+              <img 
+                src="/sweepshublogo.jpg" 
+                alt="Sweeps Hub" 
+                className="relative h-14 w-14 md:h-16 md:w-16 rounded-full border-2 border-red-500 shadow-lg" 
+              />
+            </div>
+            <span className="relative">
+              <span className="absolute -inset-1 bg-gradient-to-r from-red-600 to-gold-500 blur opacity-25"></span>
+              <span className="relative">Sweeps Hub</span>
+            </span>
           </motion.button>
 
           {/* Desktop Navigation */}
