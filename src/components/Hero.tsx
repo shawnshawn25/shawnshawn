@@ -7,6 +7,14 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden" id="home">
       <div className="container mx-auto px-4">
@@ -44,26 +52,12 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
               >
                 View Games <ArrowRight size={18} />
               </motion.button>
-              <motion.button
-                onClick={() => onSectionChange('backend')}
-                className="px-6 py-3 bg-navy-800 hover:bg-navy-700 text-white rounded-lg font-semibold text-center transition duration-200"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Backend Links
-              </motion.button>
               <motion.a
                 href="#contact"
                 className="px-6 py-3 bg-transparent hover:bg-white/10 border border-white/20 text-white rounded-lg font-semibold text-center transition duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
+                onClick={scrollToContact}
               >
                 Contact Us
               </motion.a>
