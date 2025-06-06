@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
 import { games } from '../data/games';
 
 const BackendLinks = () => {
@@ -29,28 +30,30 @@ const BackendLinks = () => {
             game.adminUrl && (
               <motion.li
                 key={game.id}
-                className="group"
-                whileHover={{ scale: 1.02 }}
+                className="bg-navy-800 rounded-xl overflow-hidden"
+                whileHover={{ y: -5 }}
                 transition={{ duration: 0.2 }}
               >
-                <a 
-                  href={game.adminUrl}
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="block"
-                >
-                  <div className="relative aspect-square overflow-hidden rounded-lg">
+                <div className="p-4">
+                  <div className="aspect-square overflow-hidden rounded-lg mb-4">
                     <img 
                       src={game.logo}
                       alt={`${game.name} logo`}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <p className="text-white text-sm font-medium">{game.name}</p>
-                    </div>
                   </div>
-                </a>
+                  <h3 className="text-sm font-medium text-center mb-3">{game.name}</h3>
+                  <motion.a
+                    href={game.adminUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-2 px-4 bg-red-600 hover:bg-red-500 text-white rounded-lg font-medium text-sm transition-colors duration-200"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Backend Login <ExternalLink size={14} />
+                  </motion.a>
+                </div>
               </motion.li>
             )
           ))}
