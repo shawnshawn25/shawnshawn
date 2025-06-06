@@ -31,22 +31,18 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              {/* Fish Table Display */}
-              <div className="relative overflow-hidden rounded-xl mb-6">
-                <div className="absolute inset-0 bg-gradient-to-r from-gold-500 to-red-600 opacity-75"></div>
-                <img 
-                  src="/fishglory.jpg" 
-                  alt="Fish Tables" 
-                  className="w-full h-64 object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                  <h3 className="text-2xl font-bold text-white mb-2">Premium Fish Tables</h3>
-                  <p className="text-lg text-white/90">Experience the best fishing games in the industry</p>
-                </div>
-              </div>
-
               <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-red-600 via-gold-500 to-red-600 rounded-lg blur-lg opacity-75"></div>
+                <motion.div
+                  className="absolute -inset-1 bg-gradient-to-r from-red-600 via-gold-500 to-red-600 rounded-lg blur-lg opacity-75"
+                  animate={{
+                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: 'linear'
+                  }}
+                />
                 <div className="relative bg-dark-950/90 rounded-lg p-6 backdrop-blur-sm">
                   <motion.div
                     className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-gold-400 to-red-500 flex items-center"
