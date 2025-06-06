@@ -55,23 +55,10 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
                       ease: 'linear'
                     }}
                   >
-                    🎮 EXCLUSIVE OFFER
+                    🎮 LARGEST GAME COLLECTION
                   </motion.div>
                   <div className="mt-2 text-lg md:text-xl text-white/90">
-                    Get up to <span className="text-gold-400 font-bold">50% OFF</span> on bulk credit purchases
-                  </div>
-                  <div className="mt-4 flex flex-wrap gap-3">
-                    {['Limited Time', '24/7 Support', 'Instant Delivery'].map((tag, index) => (
-                      <motion.span
-                        key={tag}
-                        className="px-3 py-1 bg-red-600/20 text-red-400 rounded-full text-sm font-medium"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: index * 0.1 + 0.5 }}
-                      >
-                        {tag}
-                      </motion.span>
-                    ))}
+                    Access to <span className="text-gold-400 font-bold">40+ Premium Games</span> in the industry
                   </div>
                 </div>
               </div>
