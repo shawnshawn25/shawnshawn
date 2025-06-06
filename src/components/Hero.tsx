@@ -42,7 +42,6 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
                   />
                   <div className="absolute bottom-0 left-0 p-4 z-20">
                     <h3 className="text-xl font-bold text-white">Slots Games</h3>
-                    <p className="text-sm text-white/80">20+ Premium Slots</p>
                   </div>
                 </div>
                 <div className="relative overflow-hidden rounded-xl">
@@ -54,7 +53,6 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
                   />
                   <div className="absolute bottom-0 left-0 p-4 z-20">
                     <h3 className="text-xl font-bold text-white">Fish Tables</h3>
-                    <p className="text-sm text-white/80">25+ Fish Games</p>
                   </div>
                 </div>
               </div>
