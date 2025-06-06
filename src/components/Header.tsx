@@ -56,7 +56,7 @@ const Header = () => {
                 onClick={() => scrollToSection('games')}
                 className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
                   activeSection === 'games'
-                    ? 'bg-gold-500 text-navy-900'
+                    ? 'bg-red-600 text-white'
                     : 'text-white/80 hover:text-white'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -68,7 +68,7 @@ const Header = () => {
                 onClick={() => scrollToSection('backend-links')}
                 className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
                   activeSection === 'backend-links'
-                    ? 'bg-gold-500 text-navy-900'
+                    ? 'bg-red-600 text-white'
                     : 'text-white/80 hover:text-white'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -79,7 +79,7 @@ const Header = () => {
             </div>
             <motion.a
               href="#contact"
-              className="px-4 py-2 bg-gold-500 hover:bg-gold-400 text-navy-900 rounded-md font-semibold transition duration-200"
+              className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-md font-semibold transition duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -117,7 +117,7 @@ const Header = () => {
                 onClick={() => scrollToSection('games')}
                 className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
                   activeSection === 'games'
-                    ? 'bg-gold-500 text-navy-900'
+                    ? 'bg-red-600 text-white'
                     : 'text-white/80 hover:text-white'
                 }`}
               >
@@ -127,7 +127,7 @@ const Header = () => {
                 onClick={() => scrollToSection('backend-links')}
                 className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
                   activeSection === 'backend-links'
-                    ? 'bg-gold-500 text-navy-900'
+                    ? 'bg-red-600 text-white'
                     : 'text-white/80 hover:text-white'
                 }`}
               >
@@ -136,7 +136,7 @@ const Header = () => {
             </div>
             <a
               href="#contact"
-              className="px-4 py-2 bg-gold-500 hover:bg-gold-400 text-navy-900 rounded-md font-semibold text-center transition duration-200"
+              className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-md font-semibold text-center transition duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact Us

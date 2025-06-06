@@ -21,7 +21,7 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
-              Premium <span className="text-gold-500">Game Credits</span> for Your Gameroom
+              Premium <span className="text-red-500">Game Credits</span> for Your Gameroom
             </h1>
             <p className="mt-6 text-lg text-white/80 max-w-xl">
               The leading distributor of game credits for gameroom owners. Get competitive rates and reliable service for your gaming business.
@@ -33,7 +33,7 @@ const Hero = () => {
                 'Reliable service',
               ].map((feature, index) => (
                 <div key={index} className="flex items-start">
-                  <Check className="mr-2 mt-1 text-gold-500 flex-shrink-0" size={20} />
+                  <Check className="mr-2 mt-1 text-red-500 flex-shrink-0" size={20} />
                   <span>{feature}</span>
                 </div>
               ))}
@@ -42,7 +42,7 @@ const Hero = () => {
               <div className="flex bg-navy-800 rounded-lg p-1">
                 <motion.button
                   onClick={() => scrollToSection('games')}
-                  className="px-6 py-3 bg-gold-500 hover:bg-gold-400 text-navy-900 rounded-lg font-semibold text-center flex items-center justify-center gap-2 transition duration-200"
+                  className="px-6 py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold text-center flex items-center justify-center gap-2 transition duration-200"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -75,7 +75,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="relative w-full max-w-lg">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-gold-500 to-red-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-400 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
               <div className="relative bg-navy-800 p-6 rounded-2xl shadow-xl">
                 <img 
                   src="/sweepshub.jpg" 
