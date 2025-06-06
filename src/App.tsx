@@ -10,6 +10,15 @@ import ParticleBackground from './components/ParticleBackground';
 function App() {
   const [currentSection, setCurrentSection] = React.useState<'games' | 'backend'>('games');
 
+  const handleSectionChange = (section: 'games' | 'backend') => {
+    setCurrentSection(section);
+    // Scroll to the top of the content area
+    const contentArea = document.getElementById('content-area');
+    if (contentArea) {
+      contentArea.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-dark-950 text-white relative overflow-hidden">
       <ParticleBackground />
@@ -20,38 +29,40 @@ function App() {
         transition={{ duration: 0.5 }}
         className="relative z-10"
       >
-        <Header currentSection={currentSection} onSectionChange={setCurrentSection} />
+        <Header currentSection={currentSection} onSectionChange={handleSectionChange} />
         <main>
-          <Hero onSectionChange={setCurrentSection} />
-          {currentSection === 'games' ? (
-            <>
-              <GamesList />
-              <div className="container mx-auto px-4 pb-16">
-                <motion.button
-                  onClick={() => setCurrentSection('backend')}
-                  className="mx-auto block px-8 py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold transition-colors duration-200"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  View Backend Links
-                </motion.button>
-              </div>
-            </>
-          ) : (
-            <>
-              <BackendLinks />
-              <div className="container mx-auto px-4 pb-16">
-                <motion.button
-                  onClick={() => setCurrentSection('games')}
-                  className="mx-auto block px-8 py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold transition-colors duration-200"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Back to Games
-                </motion.button>
-              </div>
-            </>
-          )}
+          <Hero onSectionChange={handleSectionChange} />
+          <div id="content-area">
+            {currentSection === 'games' ? (
+              <>
+                <GamesList />
+                <div className="container mx-auto px-4 pb-16">
+                  <motion.button
+                    onClick={() => handleSectionChange('backend')}
+                    className="mx-auto block px-8 py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold transition-colors duration-200"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    View Backend Links
+                  </motion.button>
+                </div>
+              </>
+            ) : (
+              <>
+                <BackendLinks />
+                <div className="container mx-auto px-4 pb-16">
+                  <motion.button
+                    onClick={() => handleSectionChange('games')}
+                    className="mx-auto block px-8 py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold transition-colors duration-200"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Back to Games
+                  </motion.button>
+                </div>
+              </>
+            )}
+          </div>
         </main>
         <Footer />
       </motion.div>

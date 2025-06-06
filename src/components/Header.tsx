@@ -22,7 +22,6 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
   const handleSectionChange = (section: 'games' | 'backend') => {
     onSectionChange(section);
     setIsMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const scrollToContact = (e: React.MouseEvent) => {
