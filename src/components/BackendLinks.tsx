@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { games } from '../data/games';
+import SearchBar from './SearchBar';
 
 const BackendLinks = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredGames = games.filter(game =>
+    game.adminUrl && game.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <section className="py-16 md:py-24 relative" id="backend-links">
       <div className="container mx-auto px-4">
@@ -19,6 +26,12 @@ const BackendLinks = () => {
           </h2>
         </motion.div>
 
+        <SearchBar 
+          searchTerm={searchTerm}
+          onSearchChange={setSearchTerm}
+          placeholder="Search backend links..."
+        />
+
         <motion.ul 
           className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
           initial={{ opacity: 0 }}
@@ -26,36 +39,34 @@ const BackendLinks = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          {games.map((game) => (
-            game.adminUrl && (
-              <motion.li
-                key={game.id}
-                className="bg-navy-800 rounded-xl overflow-hidden"
-                whileHover={{ y: -5 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="p-4">
-                  <div className="aspect-square overflow-hidden rounded-lg mb-4">
-                    <img 
-                      src={game.logo}
-                      alt={`${game.name} logo`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-sm font-medium text-center mb-3">{game.name}</h3>
-                  <motion.a
-                    href={game.adminUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-2 px-4 bg-red-600 hover:bg-red-500 text-white rounded-lg font-medium text-sm transition-colors duration-200"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Backend Login <ExternalLink size={14} />
-                  </motion.a>
+          {filteredGames.map((game) => (
+            <motion.li
+              key={game.id}
+              className="bg-navy-800 rounded-xl overflow-hidden"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="p-4">
+                <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                  <img 
+                    src={game.logo}
+                    alt={`${game.name} logo`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </motion.li>
-            )
+                <h3 className="text-sm font-medium text-center mb-3">{game.name}</h3>
+                <motion.a
+                  href={game.adminUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full py-2 px-4 bg-red-600 hover:bg-red-500 text-white rounded-lg font-medium text-sm transition-colors duration-200"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Backend Login <ExternalLink size={14} />
+                </motion.a>
+              </div>
+            </motion.li>
           ))}
         </motion.ul>
       </div>
