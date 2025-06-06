@@ -55,7 +55,8 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
                       ease: 'linear'
                     }}
                   >
-                    🎰 LARGEST GAME COLLECTION
+                    <img src="/sweepshublogo.jpg" alt="Sweeps Hub" className="inline-block h-8 w-8 rounded-full mr-2" />
+                    LARGEST GAME COLLECTION
                   </motion.div>
                   <div className="mt-2 text-lg md:text-xl text-white/90">
                     Access to <span className="text-gold-400 font-bold">45+ Premium Games</span> in the industry
