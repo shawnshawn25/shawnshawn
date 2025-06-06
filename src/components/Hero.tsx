@@ -45,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
                 />
                 <div className="relative bg-dark-950/90 rounded-lg p-6 backdrop-blur-sm">
                   <motion.div
-                    className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-gold-400 to-red-500"
+                    className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-gold-400 to-red-500 flex items-center"
                     animate={{
                       backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                     }}
@@ -55,7 +55,14 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
                       ease: 'linear'
                     }}
                   >
-                    <img src="/sweepshublogo.jpg" alt="Sweeps Hub" className="inline-block h-8 w-8 rounded-full mr-2" />
+                    <div className="relative mr-4">
+                      <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-gold-500 rounded-full blur-sm opacity-75"></div>
+                      <img 
+                        src="/sweepshublogo.jpg" 
+                        alt="Sweeps Hub" 
+                        className="relative h-16 w-16 md:h-20 md:w-20 rounded-full border-2 border-red-500 shadow-lg" 
+                      />
+                    </div>
                     LARGEST GAME COLLECTION
                   </motion.div>
                   <div className="mt-2 text-lg md:text-xl text-white/90">
