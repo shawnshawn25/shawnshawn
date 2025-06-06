@@ -4,12 +4,35 @@ import { ExternalLink } from 'lucide-react';
 import { games } from '../data/games';
 import SearchBar from './SearchBar';
 
+type GameCategory = 'all' | 'slots' | 'fish' | 'tables';
+
 const GamesList = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [activeCategory, setActiveCategory] = useState<GameCategory>('all');
 
-  const filteredGames = games.filter(game =>
-    game.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const categories: { id: GameCategory; label: string }[] = [
+    { id: 'all', label: 'All Games' },
+    { id: 'slots', label: 'Slots' },
+    { id: 'fish', label: 'Fish Tables' },
+    { id: 'tables', label: 'Table Games' }
+  ];
+
+  const filteredGames = games.filter(game => {
+    const matchesSearch = game.name.toLowerCase().includes(searchTerm.toLowerCase());
+    if (activeCategory === 'all') return matchesSearch;
+    
+    // Simple category matching logic - can be enhanced based on actual game categories
+    const categoryMatches = {
+      slots: ['slots', 'casino', 'jackpot'],
+      fish: ['fish', 'fishing', 'kirin', 'dragon'],
+      tables: ['poker', 'blackjack', 'roulette', 'table']
+    };
+
+    const gameNameLower = game.name.toLowerCase();
+    return matchesSearch && categoryMatches[activeCategory].some(keyword => 
+      gameNameLower.includes(keyword)
+    );
+  });
 
   return (
     <section className="pt-0 pb-16 md:pb-24 relative" id="games">
@@ -25,6 +48,27 @@ const GamesList = () => {
             Available <span className="text-red-500">Games</span>
           </h2>
         </motion.div>
+
+        {/* Category Tabs */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex bg-navy-800 rounded-lg p-1">
+            {categories.map((category) => (
+              <motion.button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`px-6 py-2.5 rounded-md font-medium transition-all duration-200 ${
+                  activeCategory === category.id
+                    ? 'bg-red-600 text-white'
+                    : 'text-white/70 hover:text-white'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {category.label}
+              </motion.button>
+            ))}
+          </div>
+        </div>
 
         <SearchBar 
           searchTerm={searchTerm}
