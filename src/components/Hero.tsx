@@ -56,11 +56,11 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
                     }}
                   >
                     <div className="relative mr-4">
-                      <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-gold-500 rounded-full blur-sm opacity-75"></div>
+                      <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-gold-500 rounded-2xl blur-sm opacity-75"></div>
                       <img 
                         src="/sweepshublogo.jpg" 
                         alt="Sweeps Hub" 
-                        className="relative h-16 w-16 md:h-20 md:w-20 rounded-full border-2 border-red-500 shadow-lg" 
+                        className="relative h-20 w-28 md:h-24 md:w-36 rounded-2xl border-2 border-red-500 shadow-lg object-cover" 
                       />
                     </div>
                     LARGEST GAME COLLECTION
