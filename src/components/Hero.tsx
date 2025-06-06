@@ -31,6 +31,34 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
+              {/* Game Categories Grid */}
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="relative overflow-hidden rounded-xl">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-10"></div>
+                  <img 
+                    src="/firekirin.jpg" 
+                    alt="Slots Games" 
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 p-4 z-20">
+                    <h3 className="text-xl font-bold text-white">Slots Games</h3>
+                    <p className="text-sm text-white/80">20+ Premium Slots</p>
+                  </div>
+                </div>
+                <div className="relative overflow-hidden rounded-xl">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-10"></div>
+                  <img 
+                    src="/fishglory.jpg" 
+                    alt="Fish Tables" 
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 p-4 z-20">
+                    <h3 className="text-xl font-bold text-white">Fish Tables</h3>
+                    <p className="text-sm text-white/80">25+ Fish Games</p>
+                  </div>
+                </div>
+              </div>
+
               <div className="relative">
                 <motion.div
                   className="absolute -inset-1 bg-gradient-to-r from-red-600 via-gold-500 to-red-600 rounded-lg blur-lg opacity-75"
