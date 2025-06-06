@@ -4,60 +4,15 @@ import { ExternalLink } from 'lucide-react';
 import { games } from '../data/games';
 import SearchBar from './SearchBar';
 
-type GameCategory = 'all' | 'slots' | 'fish' | 'tables';
-
 const GamesList = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeCategory, setActiveCategory] = useState<GameCategory>('all');
 
-  const categories: { id: GameCategory; label: string }[] = [
-    { id: 'all', label: 'All Games' },
-    { id: 'slots', label: 'Slots' },
-    { id: 'fish', label: 'Fish Tables' },
-    { id: 'tables', label: 'Table Games' }
-  ];
-
-  const filteredGames = games.filter(game => {
-    const matchesSearch = game.name.toLowerCase().includes(searchTerm.toLowerCase());
-    if (activeCategory === 'all') return matchesSearch;
-    
-    const categoryMatches = {
-      slots: ['slots', 'casino', 'jackpot'],
-      fish: ['fish', 'fishing', 'kirin', 'dragon'],
-      tables: ['poker', 'blackjack', 'roulette', 'table']
-    };
-
-    const gameNameLower = game.name.toLowerCase();
-    return matchesSearch && categoryMatches[activeCategory].some(keyword => 
-      gameNameLower.includes(keyword)
-    );
-  });
+  const filteredGames = games.filter(game =>
+    game.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <section className="pt-8 pb-16 md:pb-24 relative" id="games">
-      {/* Category Tabs - Moved to top */}
-      <div className="container mx-auto px-4 mb-12">
-        <div className="flex justify-center">
-          <div className="inline-flex bg-navy-800 rounded-lg p-1 shadow-xl">
-            {categories.map((category) => (
-              <motion.button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`px-8 py-3 rounded-md font-medium transition-all duration-200 ${
-                  activeCategory === category.id
-                    ? 'bg-red-600 text-white shadow-lg'
-                    : 'text-white/70 hover:text-white hover:bg-navy-700'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {category.label}
-              </motion.button>
-            ))}
-          </div>
-        </div>
-      </div>
-
+    <section className="pt-0 pb-16 md:pb-24 relative" id="games">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-12"
