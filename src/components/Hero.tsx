@@ -25,6 +25,58 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
+            <motion.div
+              className="mb-8 relative"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="relative">
+                <motion.div
+                  className="absolute -inset-1 bg-gradient-to-r from-red-600 via-gold-500 to-red-600 rounded-lg blur-lg opacity-75"
+                  animate={{
+                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: 'linear'
+                  }}
+                />
+                <div className="relative bg-dark-950/90 rounded-lg p-6 backdrop-blur-sm">
+                  <motion.div
+                    className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-gold-400 to-red-500"
+                    animate={{
+                      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                    }}
+                    transition={{
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: 'linear'
+                    }}
+                  >
+                    🎮 EXCLUSIVE OFFER
+                  </motion.div>
+                  <div className="mt-2 text-lg md:text-xl text-white/90">
+                    Get up to <span className="text-gold-400 font-bold">50% OFF</span> on bulk credit purchases
+                  </div>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    {['Limited Time', '24/7 Support', 'Instant Delivery'].map((tag, index) => (
+                      <motion.span
+                        key={tag}
+                        className="px-3 py-1 bg-red-600/20 text-red-400 rounded-full text-sm font-medium"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: index * 0.1 + 0.5 }}
+                      >
+                        {tag}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
               Premium <span className="text-red-500">Game Credits</span> for Your Gameroom
             </h1>
