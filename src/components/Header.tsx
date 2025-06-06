@@ -51,32 +51,30 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
-            <div className="flex bg-navy-800 rounded-lg p-1">
-              <motion.button
-                onClick={() => scrollToSection('games')}
-                className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
-                  activeSection === 'games'
-                    ? 'bg-red-600 text-white'
-                    : 'text-white/80 hover:text-white'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Games
-              </motion.button>
-              <motion.button
-                onClick={() => scrollToSection('backend-links')}
-                className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
-                  activeSection === 'backend-links'
-                    ? 'bg-red-600 text-white'
-                    : 'text-white/80 hover:text-white'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Backend Links
-              </motion.button>
-            </div>
+            <motion.button
+              onClick={() => scrollToSection('games')}
+              className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
+                activeSection === 'games'
+                  ? 'bg-red-600 text-white'
+                  : 'bg-navy-800 text-white/80 hover:text-white'
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Games
+            </motion.button>
+            <motion.button
+              onClick={() => scrollToSection('backend-links')}
+              className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
+                activeSection === 'backend-links'
+                  ? 'bg-red-600 text-white'
+                  : 'bg-navy-800 text-white/80 hover:text-white'
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Backend Links
+            </motion.button>
             <motion.a
               href="#contact"
               className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-md font-semibold transition duration-200"
@@ -112,28 +110,26 @@ const Header = () => {
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col space-y-4">
-            <div className="flex flex-col bg-navy-700 rounded-lg p-1 space-y-1">
-              <button
-                onClick={() => scrollToSection('games')}
-                className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
-                  activeSection === 'games'
-                    ? 'bg-red-600 text-white'
-                    : 'text-white/80 hover:text-white'
-                }`}
-              >
-                Games
-              </button>
-              <button
-                onClick={() => scrollToSection('backend-links')}
-                className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
-                  activeSection === 'backend-links'
-                    ? 'bg-red-600 text-white'
-                    : 'text-white/80 hover:text-white'
-                }`}
-              >
-                Backend Links
-              </button>
-            </div>
+            <button
+              onClick={() => scrollToSection('games')}
+              className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
+                activeSection === 'games'
+                  ? 'bg-red-600 text-white'
+                  : 'bg-navy-700 text-white/80 hover:text-white'
+              }`}
+            >
+              Games
+            </button>
+            <button
+              onClick={() => scrollToSection('backend-links')}
+              className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
+                activeSection === 'backend-links'
+                  ? 'bg-red-600 text-white'
+                  : 'bg-navy-700 text-white/80 hover:text-white'
+              }`}
+            >
+              Backend Links
+            </button>
             <a
               href="#contact"
               className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-md font-semibold text-center transition duration-200"

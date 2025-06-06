@@ -39,24 +39,22 @@ const Hero = () => {
               ))}
             </div>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <div className="flex bg-navy-800 rounded-lg p-1">
-                <motion.button
-                  onClick={() => scrollToSection('games')}
-                  className="px-6 py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold text-center flex items-center justify-center gap-2 transition duration-200"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  View Games <ArrowRight size={18} />
-                </motion.button>
-                <motion.button
-                  onClick={() => scrollToSection('backend-links')}
-                  className="px-6 py-3 hover:bg-white/10 text-white rounded-lg font-semibold text-center transition duration-200"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Backend Links
-                </motion.button>
-              </div>
+              <motion.button
+                onClick={() => scrollToSection('games')}
+                className="px-6 py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold text-center flex items-center justify-center gap-2 transition duration-200"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View Games <ArrowRight size={18} />
+              </motion.button>
+              <motion.button
+                onClick={() => scrollToSection('backend-links')}
+                className="px-6 py-3 bg-navy-800 hover:bg-navy-700 text-white rounded-lg font-semibold text-center transition duration-200"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Backend Links
+              </motion.button>
               <motion.a
                 href="#contact"
                 className="px-6 py-3 bg-transparent hover:bg-white/10 border border-white/20 text-white rounded-lg font-semibold text-center transition duration-200"
