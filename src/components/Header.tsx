@@ -15,6 +15,18 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash === 'games' || hash === 'backend-links') {
+        setActiveSection(hash);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -25,6 +37,7 @@ const Header = () => {
       element.scrollIntoView({ behavior: 'smooth' });
       setActiveSection(sectionId);
       setIsMenuOpen(false);
+      window.location.hash = sectionId;
     }
   };
 
@@ -44,6 +57,11 @@ const Header = () => {
             className="flex items-center space-x-3 text-white font-heading font-bold text-xl md:text-2xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              setActiveSection('games');
+            }}
           >
             <img src="/sweepshublogo.jpg" alt="Sweeps Hub" className="h-10 w-10 rounded-full" />
             <span>Sweeps Hub</span>
@@ -51,30 +69,32 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
-            <motion.button
-              onClick={() => scrollToSection('games')}
-              className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
-                activeSection === 'games'
-                  ? 'bg-red-600 text-white'
-                  : 'bg-navy-800 text-white/80 hover:text-white'
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Games
-            </motion.button>
-            <motion.button
-              onClick={() => scrollToSection('backend-links')}
-              className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
-                activeSection === 'backend-links'
-                  ? 'bg-red-600 text-white'
-                  : 'bg-navy-800 text-white/80 hover:text-white'
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Backend Links
-            </motion.button>
+            <div className="flex bg-navy-800 rounded-lg p-1">
+              <motion.button
+                onClick={() => scrollToSection('games')}
+                className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
+                  activeSection === 'games'
+                    ? 'bg-red-600 text-white'
+                    : 'text-white/80 hover:text-white'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Games
+              </motion.button>
+              <motion.button
+                onClick={() => scrollToSection('backend-links')}
+                className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
+                  activeSection === 'backend-links'
+                    ? 'bg-red-600 text-white'
+                    : 'text-white/80 hover:text-white'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Backend Links
+              </motion.button>
+            </div>
             <motion.a
               href="#contact"
               className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-md font-semibold transition duration-200"
@@ -110,26 +130,28 @@ const Header = () => {
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col space-y-4">
-            <button
-              onClick={() => scrollToSection('games')}
-              className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
-                activeSection === 'games'
-                  ? 'bg-red-600 text-white'
-                  : 'bg-navy-700 text-white/80 hover:text-white'
-              }`}
-            >
-              Games
-            </button>
-            <button
-              onClick={() => scrollToSection('backend-links')}
-              className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
-                activeSection === 'backend-links'
-                  ? 'bg-red-600 text-white'
-                  : 'bg-navy-700 text-white/80 hover:text-white'
-              }`}
-            >
-              Backend Links
-            </button>
+            <div className="flex flex-col bg-navy-700 rounded-lg p-1 space-y-1">
+              <button
+                onClick={() => scrollToSection('games')}
+                className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
+                  activeSection === 'games'
+                    ? 'bg-red-600 text-white'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                Games
+              </button>
+              <button
+                onClick={() => scrollToSection('backend-links')}
+                className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
+                  activeSection === 'backend-links'
+                    ? 'bg-red-600 text-white'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                Backend Links
+              </button>
+            </div>
             <a
               href="#contact"
               className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-md font-semibold text-center transition duration-200"
