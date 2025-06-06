@@ -2,14 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
 
-const Hero = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+interface HeroProps {
+  onSectionChange: (section: 'games' | 'backend') => void;
+}
 
+const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
   return (
     <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden" id="home">
       <div className="container mx-auto px-4">
@@ -40,7 +37,7 @@ const Hero = () => {
             </div>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <motion.button
-                onClick={() => scrollToSection('games')}
+                onClick={() => onSectionChange('games')}
                 className="px-6 py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold text-center flex items-center justify-center gap-2 transition duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -48,7 +45,7 @@ const Hero = () => {
                 View Games <ArrowRight size={18} />
               </motion.button>
               <motion.button
-                onClick={() => scrollToSection('backend-links')}
+                onClick={() => onSectionChange('backend')}
                 className="px-6 py-3 bg-navy-800 hover:bg-navy-700 text-white rounded-lg font-semibold text-center transition duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -60,6 +57,13 @@ const Hero = () => {
                 className="px-6 py-3 bg-transparent hover:bg-white/10 border border-white/20 text-white rounded-lg font-semibold text-center transition duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 Contact Us
               </motion.a>

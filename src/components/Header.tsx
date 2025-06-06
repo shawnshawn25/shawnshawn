@@ -19,10 +19,6 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   const handleSectionChange = (section: 'games' | 'backend') => {
     onSectionChange(section);
     setIsMenuOpen(false);
@@ -40,19 +36,15 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
     >
       <div className="container mx-auto px-4 py-4 md:py-5">
         <div className="flex justify-between items-center">
-          <motion.a
-            href="#"
+          <motion.button
+            onClick={() => handleSectionChange('games')}
             className="flex items-center space-x-3 text-white font-heading font-bold text-xl md:text-2xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
           >
             <img src="/sweepshublogo.jpg" alt="Sweeps Hub" className="h-10 w-10 rounded-full" />
             <span>Sweeps Hub</span>
-          </motion.a>
+          </motion.button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
@@ -102,7 +94,7 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
           {/* Mobile Menu Button */}
           <motion.button
             className="md:hidden text-white"
-            onClick={toggleMenu}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
             whileTap={{ scale: 0.9 }}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -112,7 +104,7 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
 
       {/* Mobile Navigation */}
       <motion.nav
-        className={`md:hidden fixed top-[72px] left-0 right-0 bg-navy-900/95 backdrop-blur-md shadow-lg ${
+        className={`md:hidden fixed inset-x-0 top-[72px] bg-navy-900/95 backdrop-blur-md shadow-lg ${
           isMenuOpen ? 'block' : 'hidden'
         }`}
         initial={{ opacity: 0, y: -20 }}

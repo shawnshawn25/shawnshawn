@@ -22,7 +22,7 @@ function App() {
       >
         <Header currentSection={currentSection} onSectionChange={setCurrentSection} />
         <main>
-          <Hero />
+          <Hero onSectionChange={setCurrentSection} />
           {currentSection === 'games' ? (
             <>
               <GamesList />
