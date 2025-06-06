@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('games');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,15 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+      setIsMenuOpen(false);
+    }
   };
 
   return (
@@ -40,23 +50,33 @@ const Header = () => {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <motion.a
-              href="#games"
-              className="text-white/80 hover:text-white font-medium transition duration-200"
-              whileHover={{ y: -2 }}
-              whileTap={{ y: 0 }}
-            >
-              Games
-            </motion.a>
-            <motion.a
-              href="#backend-links"
-              className="text-white/80 hover:text-white font-medium transition duration-200"
-              whileHover={{ y: -2 }}
-              whileTap={{ y: 0 }}
-            >
-              Backend Links
-            </motion.a>
+          <nav className="hidden md:flex items-center space-x-4">
+            <div className="flex bg-navy-800 rounded-lg p-1">
+              <motion.button
+                onClick={() => scrollToSection('games')}
+                className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
+                  activeSection === 'games'
+                    ? 'bg-gold-500 text-navy-900'
+                    : 'text-white/80 hover:text-white'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Games
+              </motion.button>
+              <motion.button
+                onClick={() => scrollToSection('backend-links')}
+                className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
+                  activeSection === 'backend-links'
+                    ? 'bg-gold-500 text-navy-900'
+                    : 'text-white/80 hover:text-white'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Backend Links
+              </motion.button>
+            </div>
             <motion.a
               href="#contact"
               className="px-4 py-2 bg-gold-500 hover:bg-gold-400 text-navy-900 rounded-md font-semibold transition duration-200"
@@ -92,20 +112,28 @@ const Header = () => {
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col space-y-4">
-            <a
-              href="#games"
-              className="text-white/80 hover:text-white py-2 font-medium transition duration-200"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Games
-            </a>
-            <a
-              href="#backend-links"
-              className="text-white/80 hover:text-white py-2 font-medium transition duration-200"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Backend Links
-            </a>
+            <div className="flex flex-col bg-navy-700 rounded-lg p-1 space-y-1">
+              <button
+                onClick={() => scrollToSection('games')}
+                className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
+                  activeSection === 'games'
+                    ? 'bg-gold-500 text-navy-900'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                Games
+              </button>
+              <button
+                onClick={() => scrollToSection('backend-links')}
+                className={`px-4 py-2 rounded-md font-medium transition duration-200 ${
+                  activeSection === 'backend-links'
+                    ? 'bg-gold-500 text-navy-900'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                Backend Links
+              </button>
+            </div>
             <a
               href="#contact"
               className="px-4 py-2 bg-gold-500 hover:bg-gold-400 text-navy-900 rounded-md font-semibold text-center transition duration-200"
