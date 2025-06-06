@@ -8,6 +8,76 @@ export interface Game {
 
 export const games: Game[] = [
   {
+    id: 'juwa',
+    name: 'JUWA',
+    link: 'https://dl.juwa777.com/',
+    logo: '/jw.jpg',
+    adminUrl: 'https://ht.juwa777.com/HomeDetail'
+  },
+  {
+    id: 'orion-stars',
+    name: 'ORION STARS',
+    link: 'https://start.orionstars.vip:8888/index.html',
+    logo: '/os.png',
+    adminUrl: 'https://orionstars.vip:8781/Store.aspx'
+  },
+  {
+    id: 'gameroom',
+    name: 'GAMEROOM',
+    link: 'https://www.gameroom777.com/m',
+    logo: '/gameroom.jpg',
+    adminUrl: 'https://agentserver1.gameroom777.com/admin/login'
+  },
+  {
+    id: 'vblink',
+    name: 'VBLINK',
+    link: 'https://www.vblink777.club/',
+    logo: '/vl.jpg',
+    adminUrl: 'https://gm.vblink777.club/#/index'
+  },
+  {
+    id: 'ultra-panda',
+    name: 'ULTRA PANDA',
+    link: 'https://www.ultrapanda.mobi/',
+    logo: '/up.jpg',
+    adminUrl: 'https://ht.ultrapanda.mobi/?#/index'
+  },
+  {
+    id: 'fire-kirin',
+    name: 'FIRE KIRIN',
+    link: 'http://start.firekirin.xyz:8580/index.html',
+    logo: '/firekirin.jpg',
+    adminUrl: 'https://firekirin.xyz:8888/Store.aspx'
+  },
+  {
+    id: 'pandamaster',
+    name: 'PANDAMASTER',
+    link: 'https://pandamaster.vip:8888/index.html',
+    logo: '/pm.jpg',
+    adminUrl: 'https://pandamaster.vip/Store.aspx'
+  },
+  {
+    id: 'milky-way',
+    name: 'MILKY WAY',
+    link: 'https://milkywayapp.xyz/',
+    logo: '/mw.jpg',
+    adminUrl: 'https://milkywayapp.xyz:8781/Store.aspx'
+  },
+  {
+    id: 'gamevault',
+    name: 'GAMEVAULT',
+    link: 'https://download.gamevault999.com/',
+    logo: '/gamevault.jpg',
+    adminUrl: 'https://agent.gamevault999.com/userManagement'
+  },
+  {
+    id: 'vegas-sweeps',
+    name: 'VEGAS SWEEPS',
+    link: 'https://m.lasvegassweeps.com/',
+    logo: '/vs.jpg',
+    adminUrl: 'https://agent.lasvegassweeps.com/userManagement'
+  },
+  {
     id: 'mr-all-in-one',
     name: 'MR. ALL IN ONE',
     link: 'https://www.mrallinone777.com/m',
@@ -27,13 +97,6 @@ export const games: Game[] = [
     link: 'https://start.vegasluck777.com/',
     logo: '/vl.jpg',
     adminUrl: 'https://www.vegasluck777.com/admin/login'
-  },
-  {
-    id: 'gameroom',
-    name: 'GAMEROOM',
-    link: 'https://www.gameroom777.com/m',
-    logo: '/gameroom.jpg',
-    adminUrl: 'https://agentserver1.gameroom777.com/admin/login'
   },
   {
     id: 'orion-power',
@@ -99,13 +162,6 @@ export const games: Game[] = [
     adminUrl: 'https://pos.fpc-mob.com/Index.aspx?it=0.5886195963028726'
   },
   {
-    id: 'vblink',
-    name: 'VBLINK',
-    link: 'https://www.vblink777.club/',
-    logo: '/vl.jpg',
-    adminUrl: 'https://gm.vblink777.club/#/index'
-  },
-  {
     id: 'acebook',
     name: 'ACEBOOK',
     link: 'https://www.playacebook.mobi/',
@@ -120,27 +176,6 @@ export const games: Game[] = [
     adminUrl: 'https://agent.goldentreasure.mobi/#/index'
   },
   {
-    id: 'orion-stars',
-    name: 'ORION STARS',
-    link: 'https://start.orionstars.vip:8888/index.html',
-    logo: '/os.png',
-    adminUrl: 'https://orionstars.vip:8781/Store.aspx'
-  },
-  {
-    id: 'fire-kirin',
-    name: 'FIRE KIRIN',
-    link: 'http://start.firekirin.xyz:8580/index.html',
-    logo: '/firekirin.jpg',
-    adminUrl: 'https://firekirin.xyz:8888/Store.aspx'
-  },
-  {
-    id: 'ultra-panda',
-    name: 'ULTRA PANDA',
-    link: 'https://www.ultrapanda.mobi/',
-    logo: '/up.jpg',
-    adminUrl: 'https://ht.ultrapanda.mobi/?#/index'
-  },
-  {
     id: 'blue-dragon',
     name: 'BLUE DRAGON',
     link: 'http://app.bluedragon777.com/',
@@ -153,41 +188,6 @@ export const games: Game[] = [
     link: 'http://game-time.vip:8580/index.html',
     logo: '/gametime.png',
     adminUrl: 'https://game-time.vip:8888/Store.aspx'
-  },
-  {
-    id: 'milky-way',
-    name: 'MILKY WAY',
-    link: 'https://milkywayapp.xyz/',
-    logo: '/mw.jpg',
-    adminUrl: 'https://milkywayapp.xyz:8781/Store.aspx'
-  },
-  {
-    id: 'juwa',
-    name: 'JUWA',
-    link: 'https://dl.juwa777.com/',
-    logo: '/jw.jpg',
-    adminUrl: 'https://ht.juwa777.com/HomeDetail'
-  },
-  {
-    id: 'pandamaster',
-    name: 'PANDAMASTER',
-    link: 'https://pandamaster.vip:8888/index.html',
-    logo: '/pm.jpg',
-    adminUrl: 'https://pandamaster.vip/Store.aspx'
-  },
-  {
-    id: 'vegas-sweeps',
-    name: 'VEGAS SWEEPS',
-    link: 'https://m.lasvegassweeps.com/',
-    logo: '/vs.jpg',
-    adminUrl: 'https://agent.lasvegassweeps.com/userManagement'
-  },
-  {
-    id: 'gamevault',
-    name: 'GAMEVAULT',
-    link: 'https://download.gamevault999.com/',
-    logo: '/gamevault.jpg',
-    adminUrl: 'https://agent.gamevault999.com/userManagement'
   },
   {
     id: 'galaxy-world',
