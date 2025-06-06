@@ -55,7 +55,7 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
                       ease: 'linear'
                     }}
                   >
-                    🎮 LARGEST GAME COLLECTION
+                    🎰 LARGEST GAME COLLECTION
                   </motion.div>
                   <div className="mt-2 text-lg md:text-xl text-white/90">
                     Access to <span className="text-gold-400 font-bold">45+ Premium Games</span> in the industry
