@@ -12,7 +12,7 @@ const BackendLinks = () => {
   );
 
   return (
-    <section className="py-8 md:py-16 relative" id="backend-links">
+    <section className="py-4 md:py-16 relative" id="backend-links">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-6 md:mb-12"

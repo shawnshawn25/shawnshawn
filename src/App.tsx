@@ -39,7 +39,7 @@ function App() {
                 <div className="container mx-auto px-4 pb-8 md:pb-16">
                   <motion.button
                     onClick={() => handleSectionChange('backend')}
-                    className="mx-auto block px-6 md:px-8 py-2.5 md:py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold transition-colors duration-200 text-sm md:text-base"
+                    className="mx-auto block px-4 md:px-8 py-2 md:py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold transition-colors duration-200 text-sm md:text-base"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -53,7 +53,7 @@ function App() {
                 <div className="container mx-auto px-4 pb-8 md:pb-16">
                   <motion.button
                     onClick={() => handleSectionChange('games')}
-                    className="mx-auto block px-6 md:px-8 py-2.5 md:py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold transition-colors duration-200 text-sm md:text-base"
+                    className="mx-auto block px-4 md:px-8 py-2 md:py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold transition-colors duration-200 text-sm md:text-base"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

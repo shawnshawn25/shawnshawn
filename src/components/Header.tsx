@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
               <img 
                 src="/sweepshublogo.jpg" 
                 alt="Sweeps Hub" 
-                className="relative h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-full border-2 border-red-500 shadow-lg" 
+                className="relative h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-full border-2 border-red-500 shadow-lg" 
               />
             </div>
             <span className="relative">

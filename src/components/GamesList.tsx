@@ -12,7 +12,7 @@ const GamesList = () => {
   );
 
   return (
-    <section className="pt-0 pb-8 md:pb-16 relative" id="games">
+    <section className="pt-0 pb-4 md:pb-16 relative" id="games">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-6 md:mb-12"

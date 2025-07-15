@@ -4,9 +4,9 @@ import { MessageCircle, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-navy-900 pt-8 md:pt-16 pb-6 md:pb-8" id="contact">
+    <footer className="bg-navy-900 pt-4 md:pt-16 pb-4 md:pb-8" id="contact">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-4 md:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -14,7 +14,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center space-x-2 md:space-x-3 mb-3 md:mb-4">
-              <img src="/sweepshublogo.jpg" alt="Sweeps Hub" className="h-8 w-8 md:h-10 md:w-10 rounded-full" />
+              <img src="/sweepshublogo.jpg" alt="Sweeps Hub" className="h-10 w-10 md:h-10 md:w-10 rounded-full" />
               <span className="text-white font-heading font-bold text-lg md:text-xl">Sweeps Hub</span>
             </div>
             <p className="text-white/60 mb-4 md:mb-6 text-sm md:text-base">
@@ -29,7 +29,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Contact Us</h3>
-            <ul className="space-y-3 md:space-y-4">
+            <ul className="space-y-2 md:space-y-4">
               <li>
                 <a 
                   href="mailto:support@sweepshub.us"
@@ -76,7 +76,7 @@ const Footer = () => {
           </motion.div>
         </div>
         
-        <div className="border-t border-white/10 pt-4 md:pt-8">
+        <div className="border-t border-white/10 pt-3 md:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-white/40 text-xs md:text-sm mb-2 md:mb-0">
               © 2025 Sweeps Hub. All rights reserved.

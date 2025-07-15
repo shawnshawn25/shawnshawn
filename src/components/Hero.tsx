@@ -86,7 +86,7 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
                       <img 
                         src="/sweepshublogo.jpg" 
                         alt="Sweeps Hub" 
-                        className="relative h-12 w-16 md:h-20 md:w-28 lg:h-24 lg:w-36 rounded-2xl border-2 border-red-500 shadow-lg object-cover" 
+                        className="relative h-20 w-28 md:h-20 md:w-28 lg:h-24 lg:w-36 rounded-2xl border-2 border-red-500 shadow-lg object-cover" 
                       />
                     </div>
                     LARGEST GAME COLLECTION
@@ -101,10 +101,10 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
             <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-tight">
               Premium <span className="text-red-500">Game Credits</span> for Your Gameroom
             </h1>
-            <p className="mt-3 md:mt-6 text-sm md:text-lg text-white/80 max-w-xl">
+            <p className="mt-2 md:mt-6 text-sm md:text-lg text-white/80 max-w-xl">
               The leading distributor of game credits for gameroom owners. Get competitive rates and reliable service for your gaming business.
             </p>
-            <div className="mt-4 md:mt-8 space-y-2 md:space-y-4">
+            <div className="mt-3 md:mt-8 space-y-1 md:space-y-4">
               {[
                 'Bulk credit packages',
                 'Competitive wholesale rates',
@@ -116,7 +116,7 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
                 </div>
               ))}
             </div>
-            <div className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-3 md:gap-4">
+            <div className="mt-4 md:mt-10 flex flex-col sm:flex-row gap-2 md:gap-4">
               <motion.button
                 onClick={() => onSectionChange('games')}
                 className="px-4 md:px-6 py-2.5 md:py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold text-center flex items-center justify-center gap-2 transition duration-200 text-sm md:text-base"
