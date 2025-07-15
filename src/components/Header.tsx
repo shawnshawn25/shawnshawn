@@ -42,11 +42,11 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto px-4 py-3">
+      <div className="container mx-auto px-4 py-2 md:py-3">
         <div className="flex justify-between items-center">
           <motion.button
             onClick={() => handleSectionChange('games')}
-            className="flex items-center space-x-4 text-white font-heading font-bold text-2xl md:text-3xl"
+            className="flex items-center space-x-2 md:space-x-4 text-white font-heading font-bold text-xl md:text-2xl lg:text-3xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
               <img 
                 src="/sweepshublogo.jpg" 
                 alt="Sweeps Hub" 
-                className="relative h-14 w-14 md:h-16 md:w-16 rounded-full border-2 border-red-500 shadow-lg" 
+                className="relative h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-full border-2 border-red-500 shadow-lg" 
               />
             </div>
             <span className="relative">
@@ -68,7 +68,7 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
           <nav className="hidden md:flex items-center space-x-4">
             <motion.a
               href="#contact"
-              className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-md font-semibold transition duration-200"
+              className="px-3 md:px-4 py-1.5 md:py-2 bg-red-600 hover:bg-red-500 text-white rounded-md font-semibold transition duration-200 text-sm md:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToContact}
@@ -83,14 +83,14 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             whileTap={{ scale: 0.9 }}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </motion.button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
       <motion.nav
-        className={`md:hidden fixed inset-x-0 top-[72px] bg-navy-900/95 backdrop-blur-md shadow-lg ${
+        className={`md:hidden fixed inset-x-0 top-[60px] bg-navy-900/95 backdrop-blur-md shadow-lg ${
           isMenuOpen ? 'block' : 'hidden'
         }`}
         initial={{ opacity: 0, y: -20 }}
@@ -100,11 +100,11 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
         }}
         transition={{ duration: 0.2 }}
       >
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-col space-y-3">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex flex-col space-y-2">
             <a
               href="#contact"
-              className="px-4 py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold text-center transition duration-200"
+              className="px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold text-center transition duration-200 text-sm"
               onClick={scrollToContact}
             >
               Contact Us

@@ -12,16 +12,16 @@ const GamesList = () => {
   );
 
   return (
-    <section className="pt-0 pb-16 md:pb-24 relative" id="games">
+    <section className="pt-0 pb-8 md:pb-16 relative" id="games">
       <div className="container mx-auto px-4">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-6 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold mb-2 md:mb-4">
             Available <span className="text-red-500">Games</span>
           </h2>
         </motion.div>
@@ -31,7 +31,7 @@ const GamesList = () => {
           onSearchChange={setSearchTerm}
         />
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-2 md:gap-4">
           {filteredGames.map((game) => (
             <motion.div
               key={game.id}
@@ -50,19 +50,20 @@ const GamesList = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-4 flex flex-col gap-3">
-                  <h3 className="text-lg font-semibold">{game.name}</h3>
+                <div className="p-2 md:p-4 flex flex-col gap-2 md:gap-3">
+                  <h3 className="text-xs md:text-sm lg:text-base font-semibold text-center leading-tight">{game.name}</h3>
                   <div className="relative group">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-400 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-200"></div>
                     <motion.a
                       href={game.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative flex items-center justify-center gap-2 w-full py-2.5 bg-gradient-to-r from-red-500 to-red-400 hover:from-red-400 hover:to-red-300 text-white rounded-lg font-medium transition-colors duration-200"
+                      className="relative flex items-center justify-center gap-1 md:gap-2 w-full py-1.5 md:py-2.5 bg-gradient-to-r from-red-500 to-red-400 hover:from-red-400 hover:to-red-300 text-white rounded-lg font-medium transition-colors duration-200 text-xs md:text-sm"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      Play Game <ExternalLink size={16} />
+                      Play <ExternalLink size={12} className="md:hidden" />
+                      <span className="hidden md:inline">Game</span> <ExternalLink size={16} className="hidden md:inline" />
                     </motion.a>
                   </div>
                 </div>
