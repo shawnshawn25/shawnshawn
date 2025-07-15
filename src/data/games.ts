@@ -236,7 +236,7 @@ export const games: Game[] = [
     name: 'MEGASPIN',
     link: 'http://www.megaspinsweeps.com/index.html',
     logo: '/ms.jpg',
-    adminUrl: 'https://megaspinpay.com/Home.aspx'
+    adminUrl: 'https://megaspinpay.com/default.aspx'
   },
   {
     id: 'river-monster',
