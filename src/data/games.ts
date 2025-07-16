@@ -305,6 +305,7 @@ export const games: Game[] = [
     id: 'kraken',
     name: 'KRAKEN',
     link: 'https://getthekraken.com/index.html',
-    logo: '/kraken.jpg'
+    logo: '/kraken.jpg',
+    adminUrl: 'https://krakenbackend.com:8781/default.aspx'
   }
 ];
