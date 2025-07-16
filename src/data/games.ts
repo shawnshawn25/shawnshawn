@@ -300,5 +300,11 @@ export const games: Game[] = [
     link: 'http://app.getbluedragon.com/',
     logo: '/bluedragonplus.png',
     adminUrl: 'http://agent.bluedragonplus.com/Login.aspx'
+  },
+  {
+    id: 'kraken',
+    name: 'KRAKEN',
+    link: 'https://getthekraken.com/index.html',
+    logo: '/kraken.jpg'
   }
 ];
