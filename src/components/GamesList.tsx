@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, CreditCard } from 'lucide-react';
 import { games } from '../data/games';
 import SearchBar from './SearchBar';
+import PaymentModal from './PaymentModal';
 
 const GamesList = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [paymentModal, setPaymentModal] = useState<{ isOpen: boolean; gameName: string }>({
+    isOpen: false,
+    gameName: ''
+  });
 
   const filteredGames = games.filter(game =>
     game.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const openPaymentModal = (gameName: string) => {
+    setPaymentModal({ isOpen: true, gameName });
+  };
+
+  const closePaymentModal = () => {
+    setPaymentModal({ isOpen: false, gameName: '' });
+  };
+
   return (
-    <section className="pt-0 pb-4 md:pb-16 relative" id="games">
+    <>
+      <section className="pt-0 pb-4 md:pb-16 relative" id="games">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-6 md:mb-12"
@@ -31,7 +45,7 @@ const GamesList = () => {
           onSearchChange={setSearchTerm}
         />
 
-        <div className="grid grid-cols-3 gap-3 md:gap-4">
+          <div className="grid grid-cols-3 gap-3 md:gap-4">
           {filteredGames.map((game) => (
             <motion.div
               key={game.id}
@@ -52,7 +66,7 @@ const GamesList = () => {
                   <div className="absolute inset-0 bg-black/40 rounded-full"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 text-center">
                     <h3 className="text-xs md:text-sm font-semibold text-white leading-tight mb-1 md:mb-2">{game.name}</h3>
-                    <div className="relative group">
+                    <div className="relative group space-y-1">
                       <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-400 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-200"></div>
                       <motion.a
                         href={game.link}
@@ -72,6 +86,15 @@ const GamesList = () => {
                           </>
                         )}
                       </motion.a>
+                      <motion.button
+                        onClick={() => openPaymentModal(game.name)}
+                        className="relative flex items-center justify-center gap-1 w-full py-1.5 md:py-2 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-black rounded-full font-medium transition-colors duration-200 text-xs"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <CreditCard size={12} />
+                        Buy Credits
+                      </motion.button>
                     </div>
                   </div>
                 </div>
@@ -80,8 +103,15 @@ const GamesList = () => {
           ))}
         </div>
       </div>
-    </section>
+      </section>
+
+      <PaymentModal
+        isOpen={paymentModal.isOpen}
+        onClose={closePaymentModal}
+        gameName={paymentModal.gameName}
+      />
+    </>
   );
-}
+};
 
 export default GamesList;
