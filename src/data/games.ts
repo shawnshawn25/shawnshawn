@@ -178,9 +178,9 @@ export const games: Game[] = [
   {
     id: 'blue-dragon',
     name: 'BLUE DRAGON',
-    link: 'http://app.bluedragon777.com/',
+    link: 'https://web.bluedragon777.com',
     logo: '/bluedragon.jpg',
-    adminUrl: 'https://agent.bluedragon777.com/Login.aspx'
+    adminUrl: 'https://manager.bluedragon777.com:8088/admin/login'
   },
   {
     id: 'game-time',
