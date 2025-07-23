@@ -64,12 +64,13 @@ function App() {
           Backend Links
         </motion.button>
       </div>
-    </div>
-  );
-}
 
       {/* Content */}
       <main>
         {currentSection === 'games' ? <GamesList /> : <BackendLinks />}
       </main>
+    </div>
+  );
+}
+
 export default App;
