@@ -33,7 +33,7 @@ const BackendLinks = () => {
         />
 
         <motion.ul
-          className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-1 md:gap-2"
+          className="grid grid-cols-3 gap-3 md:gap-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -46,24 +46,24 @@ const BackendLinks = () => {
               whileHover={{ y: -5 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="p-1 md:p-2">
-                <div className="aspect-square overflow-hidden rounded-lg mb-1 md:mb-2">
+              <div className="p-2 md:p-3">
+                <div className="aspect-square overflow-hidden rounded-lg mb-2 md:mb-3">
                   <img 
                     src={game.logo}
                     alt={`${game.name} logo`}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-xs font-medium text-center mb-1 md:mb-2 leading-tight">{game.name}</h3>
+                <h3 className="text-sm md:text-base font-medium text-center mb-2 md:mb-3 leading-tight">{game.name}</h3>
                 <motion.a
                   href={game.adminUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-1 w-full py-1 md:py-1.5 px-1 md:px-2 bg-red-600 hover:bg-red-500 text-white rounded-lg font-medium text-xs transition-colors duration-200"
+                  className="flex items-center justify-center gap-1 md:gap-2 w-full py-2 md:py-2.5 px-2 md:px-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-medium text-xs md:text-sm transition-colors duration-200"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="hidden sm:inline">Backend</span> Login <ExternalLink size={10} className="md:hidden" /><ExternalLink size={12} className="hidden md:inline" />
+                  Backend Login <ExternalLink size={14} className="md:hidden" /><ExternalLink size={16} className="hidden md:inline" />
                 </motion.a>
               </div>
             </motion.li>
