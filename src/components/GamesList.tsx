@@ -79,6 +79,7 @@ const GamesList = () => {
             </motion.div>
           ))}
         </div>
+        </div>
       </div>
     </section>
   );
