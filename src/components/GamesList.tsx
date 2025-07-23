@@ -31,7 +31,7 @@ const GamesList = () => {
           onSearchChange={setSearchTerm}
         />
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-2 md:gap-4">
+        <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-1 md:gap-2">
           {filteredGames.map((game) => (
             <motion.div
               key={game.id}
@@ -50,20 +50,20 @@ const GamesList = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-2 md:p-4 flex flex-col gap-2 md:gap-3">
-                  <h3 className="text-xs md:text-sm lg:text-base font-semibold text-center leading-tight">{game.name}</h3>
+                <div className="p-1 md:p-2 flex flex-col gap-1 md:gap-2">
+                  <h3 className="text-xs md:text-sm font-semibold text-center leading-tight">{game.name}</h3>
                   <div className="relative group">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-400 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-200"></div>
                     <motion.a
                       href={game.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative flex items-center justify-center gap-1 md:gap-2 w-full py-1.5 md:py-2.5 bg-gradient-to-r from-red-500 to-red-400 hover:from-red-400 hover:to-red-300 text-white rounded-lg font-medium transition-colors duration-200 text-xs md:text-sm"
+                      className="relative flex items-center justify-center gap-1 w-full py-1 md:py-1.5 bg-gradient-to-r from-red-500 to-red-400 hover:from-red-400 hover:to-red-300 text-white rounded-lg font-medium transition-colors duration-200 text-xs"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      Play <ExternalLink size={12} className="md:hidden" />
-                      <span className="hidden md:inline">Game</span> <ExternalLink size={16} className="hidden md:inline" />
+                      Play <ExternalLink size={10} className="md:hidden" />
+                      <span className="hidden md:inline">Game</span> <ExternalLink size={12} className="hidden md:inline" />
                     </motion.a>
                   </div>
                 </div>
