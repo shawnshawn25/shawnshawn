@@ -312,7 +312,7 @@ export const games: Game[] = [
     id: 'riversweeps',
     name: 'RIVERSWEEPS',
     link: 'https://river777.com/',
-    logo: '/riversweeps.jpg',
+    logo: '/riversweeps copy.jpg',
     adminUrl: 'https://www.river-pay.net/login'
   }
 ];

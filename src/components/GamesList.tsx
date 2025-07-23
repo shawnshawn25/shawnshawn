@@ -62,8 +62,16 @@ const GamesList = () => {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      Play <ExternalLink size={10} className="md:hidden" />
-                      <span className="hidden md:inline">Game</span> <ExternalLink size={12} className="hidden md:inline" />
+                      {game.name === 'BLUE DRAGON' ? (
+                        <>
+                          <span className="hidden sm:inline">Web</span> Version <ExternalLink size={10} className="md:hidden" /><ExternalLink size={12} className="hidden md:inline" />
+                        </>
+                      ) : (
+                        <>
+                          Play <ExternalLink size={10} className="md:hidden" />
+                          <span className="hidden md:inline">Game</span> <ExternalLink size={12} className="hidden md:inline" />
+                        </>
+                      )}
                     </motion.a>
                   </div>
                 </div>
