@@ -307,5 +307,12 @@ export const games: Game[] = [
     link: 'https://getthekraken.com/index.html',
     logo: '/kraken.jpg',
     adminUrl: 'https://krakenbackend.com:8781/default.aspx'
+  },
+  {
+    id: 'riversweeps',
+    name: 'RIVERSWEEPS',
+    link: 'https://river777.com/',
+    logo: '/riversweeps.jpg',
+    adminUrl: 'https://www.river-pay.net/login'
   }
 ];
