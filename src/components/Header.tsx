@@ -53,14 +53,14 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onSectionChange }) => {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-gold-500 rounded-full blur-sm opacity-75"></div>
               <img 
-                src="/sweepshublogo.jpg" 
-                alt="Sweeps Hub" 
+                src="/shawn.jpeg" 
+                alt="Shawn Sweepstakes" 
                 className="relative h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-full border-2 border-red-500 shadow-lg" 
               />
             </div>
             <span className="relative">
               <span className="absolute -inset-1 bg-gradient-to-r from-red-600 to-gold-500 blur opacity-25"></span>
-              <span className="relative">Sweeps Hub</span>
+              <span className="relative">Shawn Sweepstakes</span>
             </span>
           </motion.button>
 
