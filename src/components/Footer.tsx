@@ -14,8 +14,8 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center space-x-2 md:space-x-3 mb-3 md:mb-4">
-              <img src="/sweepshublogo.jpg" alt="Sweeps Hub" className="h-10 w-10 md:h-10 md:w-10 rounded-full" />
-              <span className="text-white font-heading font-bold text-lg md:text-xl">Sweeps Hub</span>
+              <img src="/shawn.jpeg" alt="Shawn Sweepstakes" className="h-10 w-10 md:h-10 md:w-10 rounded-full" />
+              <span className="text-white font-heading font-bold text-lg md:text-xl">Shawn Sweepstakes</span>
             </div>
             <p className="text-white/60 mb-4 md:mb-6 text-sm md:text-base">
               The premier platform for game points distribution and rewards.
@@ -32,11 +32,11 @@ const Footer = () => {
             <ul className="space-y-2 md:space-y-4">
               <li>
                 <a 
-                  href="mailto:support@sweepshub.us"
+                  href="mailto:support@shawnsweepstakes.us"
                   className="flex items-center gap-2 text-white/60 hover:text-red-500 transition-colors duration-200 text-sm md:text-base"
                 >
                   <Mail size={16} className="md:hidden" /><Mail size={18} className="hidden md:inline" />
-                  <span>support@sweepshub.us</span>
+                  <span>support@shawnsweepstakes.us</span>
                 </a>
               </li>
               <li>
@@ -79,7 +79,7 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-3 md:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-white/40 text-xs md:text-sm mb-2 md:mb-0">
-              © 2025 Sweeps Hub. All rights reserved.
+              © 2025 Shawn Sweepstakes. All rights reserved.
             </p>
           </div>
         </div>

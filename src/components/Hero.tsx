@@ -84,8 +84,8 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
                     <div className="relative mr-2 md:mr-4">
                       <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-gold-500 rounded-2xl blur-sm opacity-75"></div>
                       <img 
-                        src="/sweepshublogo.jpg" 
-                        alt="Sweeps Hub" 
+                        src="/shawn.jpeg" 
+                        alt="Shawn Sweepstakes" 
                         className="relative h-20 w-28 md:h-20 md:w-28 lg:h-24 lg:w-36 rounded-2xl border-2 border-red-500 shadow-lg object-cover" 
                       />
                     </div>
