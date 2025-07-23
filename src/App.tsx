@@ -1,17 +1,13 @@
 import React from 'react';
 import GamesList from './components/GamesList';
-import BackendLinks from './components/BackendLinks';
+import CasinoBackground from './components/CasinoBackground';
 import { motion } from 'framer-motion';
 
 function App() {
-  const [currentSection, setCurrentSection] = React.useState<'games' | 'backend'>('games');
-
-  const handleSectionChange = (section: 'games' | 'backend') => {
-    setCurrentSection(section);
-  };
-
   return (
     <div className="min-h-screen bg-dark-950 text-white relative overflow-hidden">
+      <CasinoBackground />
+      
       {/* Logo Header */}
       <div className="text-center py-6 md:py-8">
         <motion.div
@@ -37,37 +33,9 @@ function App() {
         </motion.div>
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="flex justify-center gap-4 mb-6 md:mb-8">
-        <motion.button
-          onClick={() => handleSectionChange('games')}
-          className={`px-6 py-2.5 rounded-lg font-semibold transition-colors duration-200 ${
-            currentSection === 'games' 
-              ? 'bg-red-600 text-white' 
-              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-          }`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Games
-        </motion.button>
-        <motion.button
-          onClick={() => handleSectionChange('backend')}
-          className={`px-6 py-2.5 rounded-lg font-semibold transition-colors duration-200 ${
-            currentSection === 'backend' 
-              ? 'bg-red-600 text-white' 
-              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-          }`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Backend Links
-        </motion.button>
-      </div>
-
       {/* Content */}
-      <main>
-        {currentSection === 'games' ? <GamesList /> : <BackendLinks />}
+      <main className="relative z-10">
+        <GamesList />
       </main>
     </div>
   );
