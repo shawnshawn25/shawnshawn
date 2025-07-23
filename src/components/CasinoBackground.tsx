@@ -43,6 +43,7 @@ const CasinoBackground: React.FC = () => {
         this.rotationSpeed = (Math.random() - 0.5) * 0.03;
         this.type = ['chip', 'card', 'dice', 'coin', 'diamond'][Math.floor(Math.random() * 5)] as any;
         this.color = ['#FFD700', '#DC143C', '#FF6B35', '#4ECDC4', '#45B7D1'][Math.floor(Math.random() * 5)];
+        this.color = ['#FFD700', '#FFA500', '#DC143C', '#FF4500', '#DAA520'][Math.floor(Math.random() * 5)];
         this.opacity = Math.random() * 0.3 + 0.1;
       }
 
