@@ -31,7 +31,6 @@ const GamesList = () => {
           onSearchChange={setSearchTerm}
         />
 
-        <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-1 md:gap-2">
         <div className="grid grid-cols-3 gap-3 md:gap-4">
           {filteredGames.map((game) => (
             <motion.div
@@ -78,7 +77,6 @@ const GamesList = () => {
               </div>
             </motion.div>
           ))}
-        </div>
         </div>
       </div>
     </section>
