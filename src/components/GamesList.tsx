@@ -35,7 +35,7 @@ const GamesList = () => {
           {filteredGames.map((game) => (
             <motion.div
               key={game.id}
-              className="bg-navy-800 rounded-xl overflow-hidden group"
+              className="bg-navy-800 rounded-full overflow-hidden group aspect-square"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -43,35 +43,36 @@ const GamesList = () => {
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
               <div className="flex flex-col h-full">
-                <div className="w-full aspect-square relative">
+                <div className="w-full h-full relative rounded-full overflow-hidden">
                   <img 
                     src={game.logo}
                     alt={`${game.name} logo`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-full"
                   />
-                </div>
-                <div className="p-2 md:p-3 flex flex-col gap-2 md:gap-3">
-                  <h3 className="text-sm md:text-base font-semibold text-center leading-tight">{game.name}</h3>
-                  <div className="relative group">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-400 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-200"></div>
-                    <motion.a
-                      href={game.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative flex items-center justify-center gap-1 md:gap-2 w-full py-2 md:py-2.5 bg-gradient-to-r from-red-500 to-red-400 hover:from-red-400 hover:to-red-300 text-white rounded-lg font-medium transition-colors duration-200 text-xs md:text-sm"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      {game.name === 'BLUE DRAGON' ? (
-                        <>
-                          Web Version <ExternalLink size={14} className="md:hidden" /><ExternalLink size={16} className="hidden md:inline" />
-                        </>
-                      ) : (
-                        <>
-                          Play Game <ExternalLink size={14} className="md:hidden" /><ExternalLink size={16} className="hidden md:inline" />
-                        </>
-                      )}
-                    </motion.a>
+                  <div className="absolute inset-0 bg-black/40 rounded-full"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 text-center">
+                    <h3 className="text-xs md:text-sm font-semibold text-white leading-tight mb-1 md:mb-2">{game.name}</h3>
+                    <div className="relative group">
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-400 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-200"></div>
+                      <motion.a
+                        href={game.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative flex items-center justify-center gap-1 w-full py-1.5 md:py-2 bg-gradient-to-r from-red-500 to-red-400 hover:from-red-400 hover:to-red-300 text-white rounded-full font-medium transition-colors duration-200 text-xs"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        {game.name === 'BLUE DRAGON' ? (
+                          <>
+                            Web <ExternalLink size={12} />
+                          </>
+                        ) : (
+                          <>
+                            Play <ExternalLink size={12} />
+                          </>
+                        )}
+                      </motion.a>
+                    </div>
                   </div>
                 </div>
               </div>
